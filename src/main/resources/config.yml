@@ -1,0 +1,46 @@
+# AutoFarm 插件配置文件
+# 自动种植插件 - 右键成熟作物自动收获并重新种植
+
+# 基础设置
+enabled: true                    # 是否启用插件功能
+require-permission: true         # 是否需要权限才能使用 (autofarm.use)
+
+# 经验设置
+give-experience: true            # 是否给予经验
+experience-amount: 1             # 每次收获给予的经验数量
+
+# 声音设置
+play-sound: true                 # 是否播放声音
+sound-type: "ENTITY_ITEM_PICKUP" # 声音类型
+
+# 支持的作物列表 (自动检测，无需配置)
+# - 小麦 (WHEAT -> WHEAT_SEEDS)
+# - 胡萝卜 (CARROTS -> CARROT)
+# - 土豆 (POTATOES -> POTATO)
+# - 甜菜根 (BEETROOTS -> BEETROOT_SEEDS)
+# - 下界疣 (NETHER_WART -> NETHER_WART)
+
+# 配置说明:
+# enabled: 设置为 false 可以临时禁用插件功能
+# require-permission: 设置为 false 则所有玩家都可以使用自动种植
+# give-experience: 设置为 false 则不给予经验奖励
+# experience-amount: 每次收获作物给予的经验点数
+# play-sound: 设置为 false 则不播放收获声音
+# sound-type: 可用的声音类型包括:
+#   - ENTITY_ITEM_PICKUP (物品拾取声)
+#   - BLOCK_CROP_BREAK (作物破坏声)
+#   - ENTITY_EXPERIENCE_ORB_PICKUP (经验球拾取声)
+#   - BLOCK_NOTE_BLOCK_PLING (音符盒声音)
+
+# 权限节点:
+# autofarm.use - 使用自动种植功能
+# autofarm.admin - 管理员权限
+# autofarm.reload - 重新加载配置
+# autofarm.info - 查看插件信息
+# autofarm.* - 所有权限
+
+# 使用方法:
+# 1. 确保玩家有 autofarm.use 权限 (默认所有玩家都有)
+# 2. 右键点击成熟的作物
+# 3. 作物会自动收获并重新种植
+# 4. 掉落物会自动添加到玩家背包，背包满时掉落到地上

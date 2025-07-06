@@ -1,0 +1,45 @@
+name: AutoFarm
+version: 1.0.0
+main: com.autofarm.AutoFarmPlugin
+api-version: "1.16"
+api: ["1.16", "1.17", "1.18", "1.19", "1.20"]
+author: YourName
+description: 自动种植插件 - 右键成熟作物自动收获并重新种植
+website: https://github.com/yourname/autofarm
+
+commands:
+  autofarm:
+    description: AutoFarm 插件主命令
+    usage: /autofarm [reload|info]
+    aliases: [af]
+    permission: autofarm.admin
+
+permissions:
+  autofarm.admin:
+    description: AutoFarm 管理员权限
+    default: op
+    children:
+      - autofarm.reload
+      - autofarm.info
+      - autofarm.use
+  
+  autofarm.reload:
+    description: 重新加载配置文件
+    default: op
+  
+  autofarm.info:
+    description: 查看插件信息
+    default: true
+  
+  autofarm.use:
+    description: 使用自动种植功能
+    default: true
+  
+  autofarm.*:
+    description: 所有 AutoFarm 权限
+    default: op
+    children:
+      - autofarm.admin
+      - autofarm.reload
+      - autofarm.info
+      - autofarm.use

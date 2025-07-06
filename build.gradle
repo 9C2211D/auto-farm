@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id("xyz.jpenilla.run-paper") version "2.3.1"
+}
+
+group = 'com.autofarm'
+version = '1.0-SNAPSHOT'
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'papermc-repo'
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+}
+
+dependencies {
+    compileOnly "org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT"
+}
+
+tasks {
+    runServer {
+        minecraftVersion("1.16.5")
+    }
+
+    compileJava {
+        options.encoding = 'UTF-8'
+    }
+
+    processResources {
+        filteringCharset = 'UTF-8'
+    }
+}
